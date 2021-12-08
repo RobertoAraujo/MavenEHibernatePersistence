@@ -6,6 +6,7 @@ import java.util.Objects;
 @Entity
 @Table(name = "efd")
 public class Efd {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -13,6 +14,9 @@ public class Efd {
     private String nome;
     @Column
     private String fome;
+
+    public Efd() {
+    }
 
     public int getId() {
         return id;

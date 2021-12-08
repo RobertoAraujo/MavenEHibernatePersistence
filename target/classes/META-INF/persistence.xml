@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd" version="2.2">
+  <!-- unidade de persistencia com o nome financas -->
+  <persistence-unit name="geradorEfd" transaction-type="RESOURCE_LOCAL">
+    <!-- Implementação do JPA, no nosso caso Hibernate -->
+    <provider>org.hibernate.ejb.HibernatePersistence</provider>
+    <!-- Aqui são listadas todas as entidades -->
+    <class>br.gov.ac.sefaz.model.Efd</class>
+    <properties>
+      <!-- Aqui são listadas configurações de banco -->
+      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/geradorefd" />
+      <property name="javax.persistence.jdbc.user" value="root" />
+      <property name="javax.persistence.jdbc.password" value="" />
+      <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
+
+      <property name="hibernate.hbm2ddl.auto" value="update" />
+      <property name="hibernate.show_sql" value="true" />
+      <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5Dialect" />
+    </properties>
+  </persistence-unit>
+</persistence>
